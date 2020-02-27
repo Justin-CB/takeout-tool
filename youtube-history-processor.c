@@ -136,7 +136,7 @@ youtube_item * process_youtube_history(int (*read)(int, char *, int))
 		fputs("Err or premature EOF reading data\n",stderr);
 		exit(2);
 	}
-	while(1) {
+	while(!eof) {
 		for(i=0;i<NUM_DIVS;i++) {
 			if(!get_div(read,INPUT_LENGTH,input,&processing_length,processing_data)) {
 				eof=1;
